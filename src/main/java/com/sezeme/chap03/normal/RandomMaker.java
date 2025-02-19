@@ -1,4 +1,4 @@
-package com.greedy.level02.normal;
+package com.sezeme.chap03.normal;
 
 import java.util.Random;
 

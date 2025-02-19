@@ -1,4 +1,4 @@
-package com.sezeme.practice.level02_normal;
+package com.sezeme.chap01.level02_normal;
 
 public class Application1 {
     public static void main(String[] args) {

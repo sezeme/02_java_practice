@@ -1,4 +1,4 @@
-package com.greedy.level01.basic;
+package com.sezeme.chap03.basic;
 
 public class Calculator {
     public void checkMethod(){

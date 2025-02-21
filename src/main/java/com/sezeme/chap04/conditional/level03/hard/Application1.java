@@ -17,30 +17,28 @@ public class Application1 {
         String op = sc.nextLine();
 
         try {
-            if(op.equals("+") || op.equals("-") || op.equals("*") || op.equals("/") || op.equals("%")){
-                switch (op.charAt(0)) {
-                    case '+' -> {
-                        System.out.println(num1 + "+" + num2 + "=" + (num1+num2));
-                    }
-                    case '-' -> {
-                        System.out.println(num1 + "-" + num2 + "=" + (num1-num2));
-                    }
-                    case '*' -> {
-                        System.out.println(num1 + "*" + num2 + "=" + (num1*num2));
-                    }
-                    case '/' -> {
-                        System.out.println(num1 + "/" + num2 + "=" + (num1/num2));
-                    }
-                    case '%' -> {
-                        System.out.println(num1 + "%" + num2 + "=" + (num1%num2));
-                    }
+            switch (op.charAt(0)) {
+                case '+' -> {
+                    System.out.println(num1 + "+" + num2 + "=" + (num1 + num2));
                 }
-            } else {
-                throw new IllegalArgumentException("입력하신 연산은 없습니다. 프로그램을 종료합니다.");
+                case '-' -> {
+                    System.out.println(num1 + "-" + num2 + "=" + (num1 - num2));
+                }
+                case '*' -> {
+                    System.out.println(num1 + "*" + num2 + "=" + (num1 * num2));
+                }
+                case '/' -> {
+                    System.out.println(num1 + "/" + num2 + "=" + (num1 / num2));
+                }
+                case '%' -> {
+                    System.out.println(num1 + "%" + num2 + "=" + (num1 % num2));
+                }
+                default -> {
+                    throw new IllegalArgumentException("입력하신 연산은 없습니다. 프로그램을 종료합니다.");
+                }
             }
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());;
         }
-
     }
 }

@@ -1,5 +1,7 @@
 package com.sezeme.chap08.polymorphism.level01.basic;
 
+import java.util.Objects;
+
 public class Triangle extends Shape implements Resizable {
     double base, height, side1, side2, side3;
 
@@ -28,5 +30,23 @@ public class Triangle extends Shape implements Resizable {
     @Override
     double calculatePerimeter() {
         return side1 + side2 + side3;
+    }
+
+    @Override
+    public String toString() {
+        return "Shape: Triangle\nArea: " + calculateArea() + "\nPerimeter: " + calculatePerimeter();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(o == null || this.getClass() != o.getClass())
+            return false;
+        Triangle triangle = (Triangle) o;
+        return base == triangle.base && height == triangle.height && side1 == triangle.side1 && side2 == triangle.side2 && side3 == triangle.side3;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(base, height, side1, side2, side3);
     }
 }

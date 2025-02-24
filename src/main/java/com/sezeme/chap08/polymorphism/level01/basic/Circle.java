@@ -1,5 +1,7 @@
 package com.sezeme.chap08.polymorphism.level01.basic;
 
+import java.util.Objects;
+
 public class Circle extends Shape implements Resizable {
     double radius;
 
@@ -20,4 +22,21 @@ public class Circle extends Shape implements Resizable {
         radius *= factor;
     }
 
+    @Override
+    public String toString() {
+        return "Shape: Circle\nArea: " + calculateArea() + "\nPerimeter: " + calculatePerimeter();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(o == null || this.getClass() != o.getClass())
+            return false;
+
+        return radius == ((Circle) o).radius;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(radius);
+    }
 }

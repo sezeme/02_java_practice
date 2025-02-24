@@ -10,13 +10,13 @@ public class ShapeManager {
             System.arraycopy(shapes,0, arr, 0, index);
             shapes = arr;
         }
-        shapes[index] = shape;
+        shapes[index++] = shape;
     }
 
     public void removeShape(Shape shape) {
         boolean hasFound = false;
-        for(int i = 0; i <= index; i++){
-            if(hasFound && i != index){
+        for(int i = 0; i < index; i++){
+            if(hasFound && i != index-1){
                 shapes[i] = shapes[i+1];
             } else if(!hasFound && shapes[i].equals(shape)){
                 hasFound = true;
@@ -27,22 +27,22 @@ public class ShapeManager {
     }
 
     public void printAllShapes() {
-        for(Shape shape : shapes){
-            System.out.println(shape);
+        for(int i = 0; i < index; i++){
+            System.out.println(shapes[i]);
         }
     }
 
     public double getTotalArea() {
         double totalArea = 0;
-        for(Shape shape : shapes){
-            totalArea = shape.calculateArea();
+        for(int i = 0; i < index; i++){
+            totalArea += shapes[i].calculateArea();
         }
         return totalArea;
     }
     public double getTotalPerimeter() {
         double totalPerimeter = 0;
-        for(Shape shape : shapes){
-            totalPerimeter = shape.calculatePerimeter();
+        for(int i = 0; i < index; i++){
+            totalPerimeter += shapes[i].calculatePerimeter();
         }
         return totalPerimeter;
     }

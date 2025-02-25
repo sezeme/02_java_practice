@@ -27,7 +27,8 @@ public class ShapeManager {
         shapes[index - 1] = null;
         index--;
     }
-    //equals를 해줄 때 오버라이딩을 해줘야하지 않나?
+    //equals를 해줄 때 오버라이딩을 해줘야하지 않나? -> 주소만으로 현재는 비교해줘도 충분히 동작함
+    //그러나 동등객체를 비교할 때는 equals 오버라이딩이 필요함.
 
     public void printAllShapes() {
         for(int i = 0; i < index; i++){

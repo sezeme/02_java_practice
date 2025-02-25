@@ -1,4 +1,4 @@
-package com.sezeme;
+package com.sezeme.test;
 
 public class Test{
     private int val;

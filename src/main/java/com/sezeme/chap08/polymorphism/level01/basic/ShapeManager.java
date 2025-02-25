@@ -8,6 +8,7 @@ public class ShapeManager {
         if(index >= shapes.length){
             Shape[] arr = new Shape[shapes.length * 2];
             System.arraycopy(shapes,0, arr, 0, index);
+//          shapes = Arrays.copyOf(shapes, shapes.length * 2);
             shapes = arr;
         }
         shapes[index++] = shape;
@@ -23,8 +24,10 @@ public class ShapeManager {
                 i--;
             }
         }
+        shapes[index - 1] = null;
         index--;
     }
+    //equals를 해줄 때 오버라이딩을 해줘야하지 않나?
 
     public void printAllShapes() {
         for(int i = 0; i < index; i++){

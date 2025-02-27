@@ -14,6 +14,11 @@ public class Application2 {
     }
 
     public static <T extends Number> double sum(T[] array) {
+
+        if (array == null) {
+            throw new IllegalArgumentException("배열은 null일 수 없습니다.");
+        }
+
         double sum = 0;
         for(T num : array){
             sum += num.doubleValue();

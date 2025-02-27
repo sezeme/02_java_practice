@@ -16,9 +16,22 @@ public class Application1 {
         System.out.println("swap 후 : " + Arrays.toString(strArray));  // [C, B, A, D]
     }
 
-    public static <T> void swap(T[] array, int a, int b) {
-        T tmp = array[a];
-        array[a] = array[b];
-        array[b] = tmp;
+    public static <T> void swap(T[] array, int index1, int index2) {
+
+        if (array == null) {
+            throw new IllegalArgumentException("배열은 null일 수 없습니다.");
+        }
+
+        if (index1 < 0 || index1 >= array.length || index2 < 0 || index2 >= array.length) {
+            throw new IndexOutOfBoundsException("인덱스가 배열의 범위를 벗어났습니다.");
+        }
+
+        if (index1 == index2) {
+            return;
+        }
+
+        T tmp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = tmp;
     }
 }

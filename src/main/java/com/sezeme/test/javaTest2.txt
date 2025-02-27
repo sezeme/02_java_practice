@@ -1,7 +1,4 @@
-package com.sezeme.test;
 
-public class javaTest {
-    /*
     1. public > protected > default > private
 
     2-1. 모든 클래스에서 사용 가능 / 패키지 밖에서 import하여 사용가능
@@ -69,5 +66,3 @@ public class javaTest {
     20. static, stack, heap, stack, static
 
 
-     */
-}

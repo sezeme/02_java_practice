@@ -1,0 +1,95 @@
+
+
+1. 2
+2. 3, 4
+3. 4 -> 오버라이딩 접근제어자 모르겠슴
+-> 더 많은 수의 예외 선언 자체는 가능. 그느데 선언이라는 게 시그니처에서의 선언 말하는건지?
+4. 추상클래스는 절반만 구현해서 다형성을 실현하기 위함이다. 인터페이스 또한 다형성을 실현하기 위함이다.
+
+5. 4, 5 -> 클래스는 다중상속 안된다.
+6. @Overriding
+7. 1, 3 -> 근데 이건 헷갈리긴 함1!!
+8. 1, 3, 4 -> 클래스에도 static이 들어갈 수 있나?
+9. public final static
+10. 1
+11. 4 -> 이거 어디서 뭐 무시할 때 사용하는건데...! 이거 쓰면 null로 나오는데 뭐였지?
+12. 5
+13.
+---
+ABC123
+After change:ABC123456
+---
+14. 4, 5
+15.
+ (1) try-catch 구문으로 예외를 잡기.
+ (2) try-catch-finally 구문으로 예외를 잡기.
+ (3) try-catch with resource 구문으로 예외를 잡기.
+
+16. 1, 3
+17. throw new Exception();
+18. 4
+19. 3, -> super()를 꼭 불러줘야 하나? 그럴 필요 없지??
+20. 동일한 인터페이스를 통해 여러 다양한 객체를 가룰 수 있는 것.
+21.
+ (1) 상속 불가
+ (2) 오버라이딩 불가 -> 오버로딩도 불가인가?
+ (3) 재대입 불가
+
+22. 4
+23. getClass? //instanceOf
+24.
+  (1) 같은 인터페이스로 여러 기능을 할 수있다.
+
+25.
+  (1) set : 중복 불가, 순서 저장 불가
+  (2) list : 순서 저장, 중복 가능
+  (3) map : 키 - 값 페어를 저장
+
+26. IOExcepion
+27. 3
+28. BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+29.
+//예외처리용 클래스를 작성함
+public class ZeroException extends Exception
+{
+ public ZeroException(String message) {
+        super(message);
+}
+}
+public class Calculator {
+ public double divide(double a, double b) throws ZeroException
+{ //나눌 수 b가 0일 경우 ZeroException 발생시키는 소스 작성함
+    if(b == 0) throw new ZeroException("0으로 나눌 수 없습니다.");
+    return a / b;
+}
+}
+public class Exam29{
+public static void main(String[] args){
+ //divide() 메소드 사용과 관련된 예외처리 코드 작성함, throws 하지 말 것.
+    try {
+        System.out.println(new Calculator().divide(12.5, 0));
+    } catch (ZeroException e) {
+        System.out.println(e.getMessage());
+    }
+}
+}
+
+30.
+try {
+ Porperties prop = new Properties();
+ prop.load(new FileReader(“dbSource.txt”));
+ 중간 생략
+}catch(IOException | SQLException e){
+ e.printStackTrace();
+}
+
+
+
+
+
+
+
+
+
+
+
